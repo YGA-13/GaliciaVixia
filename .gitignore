@@ -1,0 +1,28 @@
+# 🔐 Segredos (NUNCA subir)
+bot/.env
+.env
+*.env
+
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 🌐 Entornos virtuais
+.venv/
+venv/
+env/
+
+# 💾 Bases de datos e logs
+*.db
+*.sqlite3
+*.log
+
+# 💻 IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
