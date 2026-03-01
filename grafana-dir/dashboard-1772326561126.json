@@ -1,0 +1,1242 @@
+{
+  "apiVersion": "dashboard.grafana.app/v2beta1",
+  "kind": "DashboardWithAccessInfo",
+  "metadata": {
+    "name": "elvgl9j",
+    "namespace": "stacks-1541334",
+    "uid": "a1dfb5da-26ff-41e1-92f9-158cb2d9bb70",
+    "resourceVersion": "1772319033852455",
+    "generation": 82,
+    "creationTimestamp": "2026-02-28T02:55:00Z",
+    "labels": {},
+    "annotations": {
+      "grafana.app/createdBy": "user:dfejwbqc2eh34c",
+      "grafana.app/folder": "",
+      "grafana.app/saved-from-ui": "Grafana Cloud (steady)",
+      "grafana.app/updatedBy": "user:dfejwbqc2eh34c",
+      "grafana.app/updatedTimestamp": "2026-02-28T22:50:33Z"
+    }
+  },
+  "spec": {
+    "annotations": [
+      {
+        "kind": "AnnotationQuery",
+        "spec": {
+          "builtIn": true,
+          "enable": false,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "query": {
+            "datasource": {
+              "name": "-- Grafana --"
+            },
+            "group": "grafana",
+            "kind": "DataQuery",
+            "spec": {},
+            "version": "v0"
+          }
+        }
+      }
+    ],
+    "cursorSync": "Off",
+    "editable": true,
+    "elements": {
+      "panel-1": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "efejxbaf7oav4d"
+                      },
+                      "group": "yesoreyeram-infinity-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "columns": [
+                          {
+                            "selector": "moduleValue",
+                            "text": "velocity",
+                            "type": "number"
+                          },
+                          {
+                            "selector": "timeInstant",
+                            "text": "time",
+                            "type": "string"
+                          }
+                        ],
+                        "filters": [],
+                        "format": "table",
+                        "global_query_id": "",
+                        "parser": "backend",
+                        "root_selector": "features.properties.days.variables.values",
+                        "source": "url",
+                        "type": "json",
+                        "url": "getNumericForecastInfo",
+                        "url_options": {
+                          "data": "",
+                          "method": "GET",
+                          "params": [
+                            {
+                              "key": "coords",
+                              "value": "${coordinates_by_municipality}"
+                            },
+                            {
+                              "key": "variables",
+                              "value": "wind"
+                            }
+                          ]
+                        }
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "Wind"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "efejxbaf7oav4d"
+                      },
+                      "group": "yesoreyeram-infinity-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "columns": [
+                          {
+                            "selector": "value",
+                            "text": "precipitation",
+                            "type": "number"
+                          },
+                          {
+                            "selector": "timeInstant",
+                            "text": "time",
+                            "type": "string"
+                          }
+                        ],
+                        "filters": [],
+                        "format": "table",
+                        "global_query_id": "",
+                        "parser": "backend",
+                        "root_selector": "features.properties.days.variables.values",
+                        "source": "url",
+                        "type": "json",
+                        "url": "getNumericForecastInfo",
+                        "url_options": {
+                          "data": "",
+                          "method": "GET",
+                          "params": [
+                            {
+                              "key": "coords",
+                              "value": "${coordinates_by_municipality}"
+                            },
+                            {
+                              "key": "variables",
+                              "value": "precipitation_amount"
+                            }
+                          ]
+                        }
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "Precipitation"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "kind": "convertFieldType",
+                  "spec": {
+                    "id": "convertFieldType",
+                    "options": {
+                      "conversions": [
+                        {
+                          "destinationType": "time",
+                          "targetField": "time"
+                        }
+                      ],
+                      "fields": {}
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "description": "",
+          "id": 1,
+          "links": [],
+          "title": "Indicadores de propagación",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "log": 2,
+                      "type": "symlog"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "timezone": [
+                  "browser"
+                ],
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.0.0-22326976726.patch2"
+          }
+        }
+      },
+      "panel-2": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 2,
+          "links": [],
+          "title": "Alertas",
+          "vizConfig": {
+            "group": "alertlist",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              },
+              "options": {
+                "alertInstanceLabelFilter": "",
+                "alertName": "",
+                "dashboardAlerts": false,
+                "groupBy": [],
+                "groupMode": "default",
+                "maxItems": 20,
+                "showInactiveAlerts": false,
+                "sortOrder": 1,
+                "stateFilter": {
+                  "error": true,
+                  "firing": true,
+                  "noData": false,
+                  "normal": false,
+                  "pending": true,
+                  "recovering": true
+                },
+                "viewMode": "list"
+              }
+            },
+            "version": "13.0.0-22326976726.patch2"
+          }
+        }
+      },
+      "panel-3": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "efejxbaf7oav4d"
+                      },
+                      "group": "yesoreyeram-infinity-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "columns": [
+                          {
+                            "selector": "value",
+                            "text": "temperature",
+                            "type": "number"
+                          }
+                        ],
+                        "filters": [],
+                        "format": "table",
+                        "global_query_id": "",
+                        "parser": "backend",
+                        "root_selector": "features.properties.days.variables.values",
+                        "source": "url",
+                        "type": "json",
+                        "url": "getNumericForecastInfo",
+                        "url_options": {
+                          "data": "",
+                          "method": "GET",
+                          "params": [
+                            {
+                              "key": "coords",
+                              "value": "${coordinates_by_municipality}"
+                            },
+                            {
+                              "key": "variables",
+                              "value": "temperature"
+                            }
+                          ]
+                        }
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 3,
+          "links": [],
+          "title": "Indicadores - Temperatura",
+          "vizConfig": {
+            "group": "gauge",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "displayName": "Temperatura (ºC)",
+                  "max": 50,
+                  "min": 0,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "purple",
+                        "value": 0
+                      },
+                      {
+                        "color": "blue",
+                        "value": 0
+                      },
+                      {
+                        "color": "green",
+                        "value": 10
+                      },
+                      {
+                        "color": "yellow",
+                        "value": 20
+                      },
+                      {
+                        "color": "#EF843C",
+                        "value": 30
+                      },
+                      {
+                        "color": "#E24D42",
+                        "value": 40
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "barShape": "flat",
+                "barWidthFactor": 0.5,
+                "effects": {
+                  "barGlow": false,
+                  "centerGlow": false,
+                  "gradient": true
+                },
+                "endpointMarker": "point",
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "segmentCount": 1,
+                "segmentSpacing": 0.3,
+                "shape": "gauge",
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto",
+                "sparkline": true,
+                "textMode": "value_and_name"
+              }
+            },
+            "version": "13.0.0-22326976726.patch2"
+          }
+        }
+      },
+      "panel-4": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "cfemuurdozbb4d"
+                      },
+                      "group": "yesoreyeram-infinity-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "columns": [],
+                        "filters": [],
+                        "format": "table",
+                        "global_query_id": "",
+                        "parser": "backend",
+                        "root_selector": "",
+                        "source": "url",
+                        "type": "csv",
+                        "url": "",
+                        "url_options": {
+                          "data": "",
+                          "method": "GET"
+                        }
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "Actives-Localities"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "kind": "convertFieldType",
+                  "spec": {
+                    "id": "convertFieldType",
+                    "options": {
+                      "conversions": [
+                        {
+                          "destinationType": "number",
+                          "targetField": "Actives-Localities latitude"
+                        },
+                        {
+                          "destinationType": "number",
+                          "targetField": "Actives-Localities longitude"
+                        },
+                        {
+                          "destinationType": "enum",
+                          "enumConfig": {
+                            "text": [
+                              "h",
+                              "n",
+                              "l"
+                            ]
+                          },
+                          "targetField": "Actives-Localities confidence"
+                        }
+                      ],
+                      "fields": {}
+                    }
+                  }
+                },
+                {
+                  "kind": "filterByValue",
+                  "spec": {
+                    "id": "filterByValue",
+                    "options": {
+                      "filters": [
+                        {
+                          "config": {
+                            "id": "greaterOrEqual",
+                            "options": {
+                              "value": "41.8"
+                            }
+                          },
+                          "fieldName": "Actives-Localities latitude"
+                        },
+                        {
+                          "config": {
+                            "id": "lowerOrEqual",
+                            "options": {
+                              "value": "43.8"
+                            }
+                          },
+                          "fieldName": "Actives-Localities latitude"
+                        },
+                        {
+                          "config": {
+                            "id": "greaterOrEqual",
+                            "options": {
+                              "value": "-9.3"
+                            }
+                          },
+                          "fieldName": "Actives-Localities longitude"
+                        },
+                        {
+                          "config": {
+                            "id": "lowerOrEqual",
+                            "options": {
+                              "value": "-6.7"
+                            }
+                          },
+                          "fieldName": "Actives-Localities longitude"
+                        }
+                      ],
+                      "match": "all",
+                      "type": "include"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "description": "",
+          "id": 4,
+          "links": [],
+          "title": "Mapa por municipios",
+          "vizConfig": {
+            "group": "geomap",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "custom": {
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "basemap": {
+                  "config": {},
+                  "name": "Layer 0",
+                  "noRepeat": false,
+                  "type": "default"
+                },
+                "controls": {
+                  "mouseWheelZoom": true,
+                  "showAttribution": true,
+                  "showDebug": false,
+                  "showMeasure": false,
+                  "showScale": false,
+                  "showZoom": true
+                },
+                "layers": [
+                  {
+                    "config": {
+                      "showLegend": true,
+                      "style": {
+                        "color": {
+                          "fixed": "dark-green"
+                        },
+                        "opacity": 0.4,
+                        "rotation": {
+                          "fixed": 0,
+                          "max": 360,
+                          "min": -360,
+                          "mode": "mod"
+                        },
+                        "size": {
+                          "fixed": 5,
+                          "max": 15,
+                          "min": 2
+                        },
+                        "symbol": {
+                          "fixed": "img/icons/marker/circle.svg",
+                          "mode": "fixed"
+                        },
+                        "symbolAlign": {
+                          "horizontal": "center",
+                          "vertical": "center"
+                        },
+                        "textConfig": {
+                          "fontSize": 12,
+                          "offsetX": 0,
+                          "offsetY": 0,
+                          "textAlign": "center",
+                          "textBaseline": "middle"
+                        }
+                      }
+                    },
+                    "filterData": {
+                      "id": "byRefId",
+                      "options": "Actives-Localities"
+                    },
+                    "name": "Focos",
+                    "tooltip": true,
+                    "type": "markers"
+                  }
+                ],
+                "tooltip": {
+                  "mode": "details"
+                },
+                "view": {
+                  "allLayers": true,
+                  "dashboardVariable": false,
+                  "id": "coords",
+                  "lat": 42.755,
+                  "lon": -7.8662,
+                  "noRepeat": false,
+                  "zoom": 7.5
+                }
+              }
+            },
+            "version": "13.0.0-22326976726.patch2"
+          }
+        }
+      },
+      "panel-7": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 7,
+          "links": [],
+          "title": "Noticias",
+          "transparent": true,
+          "vizConfig": {
+            "group": "text",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              },
+              "options": {
+                "code": {
+                  "language": "plaintext",
+                  "showLineNumbers": false,
+                  "showMiniMap": false
+                },
+                "content": "<iframe src=\"https://www.lavozdegalicia.es/temas/incendios-en-galicia/\" height=\"400\" width=\"400\"></iframe>",
+                "mode": "html"
+              }
+            },
+            "version": "13.0.0-22326976726.patch2"
+          }
+        }
+      },
+      "panel-8": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "efejxbaf7oav4d"
+                      },
+                      "group": "yesoreyeram-infinity-datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "columns": [
+                          {
+                            "selector": "value",
+                            "text": "humidity",
+                            "type": "number"
+                          }
+                        ],
+                        "filters": [],
+                        "format": "table",
+                        "global_query_id": "",
+                        "parser": "backend",
+                        "root_selector": "features.properties.days.variables.values",
+                        "source": "url",
+                        "type": "json",
+                        "url": "getNumericForecastInfo",
+                        "url_options": {
+                          "data": "",
+                          "method": "GET",
+                          "params": [
+                            {
+                              "key": "coords",
+                              "value": "${coordinates_by_municipality}"
+                            },
+                            {
+                              "key": "variables",
+                              "value": "relative_humidity"
+                            }
+                          ]
+                        }
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 8,
+          "links": [],
+          "title": "Indicadores - Humedad",
+          "vizConfig": {
+            "group": "gauge",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "displayName": "Humedad (%)",
+                  "max": 100,
+                  "min": 0,
+                  "thresholds": {
+                    "mode": "percentage",
+                    "steps": [
+                      {
+                        "color": "dark-red",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 50
+                      },
+                      {
+                        "color": "orange",
+                        "value": 60
+                      },
+                      {
+                        "color": "yellow",
+                        "value": 70
+                      },
+                      {
+                        "color": "green",
+                        "value": 80
+                      },
+                      {
+                        "color": "blue",
+                        "value": 90
+                      }
+                    ]
+                  }
+                },
+                "overrides": []
+              },
+              "options": {
+                "barShape": "flat",
+                "barWidthFactor": 0.5,
+                "effects": {
+                  "barGlow": false,
+                  "centerGlow": false,
+                  "gradient": true
+                },
+                "endpointMarker": "point",
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "segmentCount": 1,
+                "segmentSpacing": 0.3,
+                "shape": "gauge",
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto",
+                "sparkline": true,
+                "textMode": "value_and_name"
+              }
+            },
+            "version": "13.0.0-22326976726.patch2"
+          }
+        }
+      },
+      "panel-9": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "efejxbaf7oav4d"
+                      },
+                      "group": "prometheus",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "columns": [
+                          {
+                            "selector": "iconURL",
+                            "text": "iconURL",
+                            "type": "string"
+                          },
+                          {
+                            "selector": "value",
+                            "text": "skyState",
+                            "type": "string"
+                          }
+                        ],
+                        "filterExpression": "",
+                        "filters": [],
+                        "format": "table",
+                        "global_query_id": "",
+                        "parser": "backend",
+                        "root_selector": "features.properties.days[0].variables.values[0]",
+                        "source": "url",
+                        "summarizeAlias": "",
+                        "summarizeBy": "",
+                        "summarizeExpression": "",
+                        "type": "json",
+                        "url": "getNumericForecastInfo",
+                        "url_options": {
+                          "data": "",
+                          "method": "GET",
+                          "params": [
+                            {
+                              "key": "coords",
+                              "value": "${coordinates_by_municipality}"
+                            },
+                            {
+                              "key": "variables",
+                              "value": "sky_state"
+                            }
+                          ]
+                        }
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": [
+                {
+                  "kind": "convertFieldType",
+                  "spec": {
+                    "id": "convertFieldType",
+                    "options": {
+                      "conversions": [
+                        {
+                          "destinationType": "enum",
+                          "enumConfig": {
+                            "text": [
+                              "SUNNY",
+                              "PARTLY_CLOUDY",
+                              "CLOUDY",
+                              "HIGH_CLOUDS",
+                              "OVERCAST",
+                              "WEAK_RAIN",
+                              "OVERCAST_AND_SHOWERS",
+                              "WEAK_SHOWERS",
+                              "DRIZZLE"
+                            ]
+                          },
+                          "targetField": "skyState"
+                        }
+                      ],
+                      "fields": {}
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "description": "",
+          "id": 9,
+          "links": [],
+          "title": "Indicadores - Pronóstico",
+          "vizConfig": {
+            "group": "dalvany-image-panel",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+              },
+              "options": {
+                "alt_field": "skyState",
+                "autofit": true,
+                "height": "75",
+                "icon_field": "iconURL",
+                "open_url": {
+                  "base_url": "",
+                  "enable": false,
+                  "metric_field": "",
+                  "open_in_tab": true,
+                  "suffix": ""
+                },
+                "overlay": {
+                  "bindings": {
+                    "bindings": [],
+                    "has_text": true,
+                    "unbounded": "#66666620"
+                  },
+                  "field": "",
+                  "height": {
+                    "size": 5,
+                    "unit": "%"
+                  },
+                  "position": "Top right",
+                  "width": {
+                    "size": 5,
+                    "unit": "%"
+                  }
+                },
+                "shared_cross_hair": {
+                  "backgroundColor": "#ffffff21",
+                  "borderColor": "#FFFFFF20"
+                },
+                "singleFill": false,
+                "slideshow": {
+                  "duration": 5000,
+                  "enable": false,
+                  "infinite": true,
+                  "pauseOnHover": true,
+                  "transition": "Slide",
+                  "transition_duration": 1000
+                },
+                "tooltip": false,
+                "tooltip_date_elapsed": false,
+                "tooltip_field": "",
+                "tooltip_include_date": false,
+                "tooltip_include_field": true,
+                "underline": {
+                  "bindings": {
+                    "bindings": [],
+                    "has_text": true,
+                    "unbounded": "#CCCCDCFF"
+                  },
+                  "bindings_field": "",
+                  "field": "",
+                  "text_align": "left",
+                  "text_size": "14"
+                },
+                "width": "75"
+              }
+            },
+            "version": "4.0.1"
+          }
+        }
+      }
+    },
+    "layout": {
+      "kind": "GridLayout",
+      "spec": {
+        "items": [
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-3"
+              },
+              "height": 9,
+              "width": 5,
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-1"
+              },
+              "height": 7,
+              "width": 11,
+              "x": 6,
+              "y": 0
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-2"
+              },
+              "height": 11,
+              "width": 6,
+              "x": 18,
+              "y": 0
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-4"
+              },
+              "height": 15,
+              "width": 11,
+              "x": 6,
+              "y": 7
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-8"
+              },
+              "height": 9,
+              "width": 5,
+              "x": 0,
+              "y": 9
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-7"
+              },
+              "height": 11,
+              "width": 6,
+              "x": 18,
+              "y": 11
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-9"
+              },
+              "height": 4,
+              "width": 5,
+              "x": 0,
+              "y": 18
+            }
+          }
+        ]
+      }
+    },
+    "links": [],
+    "liveNow": false,
+    "preload": false,
+    "tags": [],
+    "timeSettings": {
+      "autoRefresh": "",
+      "autoRefreshIntervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "fiscalYearStartMonth": 0,
+      "from": "2026-03-01T01:00:00.000Z",
+      "hideTimepicker": false,
+      "timezone": "browser",
+      "to": "2026-03-04T00:00:00.000Z"
+    },
+    "title": "GaliciaVixía - Dashboard",
+    "variables": [
+      {
+        "kind": "QueryVariable",
+        "spec": {
+          "allowCustomValue": true,
+          "current": {
+            "text": "Arufe",
+            "value": "-8.65904,42.16166"
+          },
+          "definition": "",
+          "hide": "dontHide",
+          "includeAll": false,
+          "multi": false,
+          "name": "coordinates_by_municipality",
+          "options": [],
+          "query": {
+            "datasource": {
+              "name": "efejxbaf7oav4d"
+            },
+            "group": "yesoreyeram-infinity-datasource",
+            "kind": "DataQuery",
+            "spec": {
+              "infinityQuery": {
+                "columns": [
+                  {
+                    "selector": "geometry.coordinates.0",
+                    "text": "longitude",
+                    "type": "number"
+                  },
+                  {
+                    "selector": "geometry.coordinates.1",
+                    "text": "latitude",
+                    "type": "number"
+                  },
+                  {
+                    "selector": "properties.name",
+                    "text": "name",
+                    "type": "string"
+                  }
+                ],
+                "computed_columns": [
+                  {
+                    "selector": "longitude + ',' + latitude",
+                    "text": "coordinates",
+                    "type": "string"
+                  }
+                ],
+                "data": "values\nfoo\nbar\nbaz",
+                "filters": [],
+                "format": "table",
+                "parser": "backend",
+                "refId": "",
+                "root_selector": "features",
+                "source": "url",
+                "type": "json",
+                "url": "findPlaces",
+                "url_options": {
+                  "data": "",
+                  "method": "GET",
+                  "params": [
+                    {
+                      "key": "location",
+                      "value": "a"
+                    },
+                    {
+                      "key": "types",
+                      "value": "locality"
+                    }
+                  ]
+                }
+              },
+              "meta": {
+                "textField": "name",
+                "valueField": "coordinates"
+              },
+              "queryType": "infinity",
+              "refId": "variable"
+            },
+            "version": "v0"
+          },
+          "refresh": "onDashboardLoad",
+          "regex": "",
+          "regexApplyTo": "value",
+          "skipUrlSync": false,
+          "sort": "disabled"
+        }
+      }
+    ]
+  },
+  "status": {}
+}
