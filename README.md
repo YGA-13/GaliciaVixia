@@ -1,7 +1,3 @@
-Vale — te reescribo el documento dejando claro que el proyecto está **desplegado en cloud**, simplificando las referencias a Docker local y adaptándolo a la arquitectura final que utilizasteis.
-
----
-
 # 🔥 GaliciaVixía
 
 **Sistema de alerta temperá de incendios forestais en Galicia**
